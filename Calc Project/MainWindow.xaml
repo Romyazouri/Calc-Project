@@ -1,0 +1,71 @@
+﻿<Window x:Class="Calc_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calc_Project"
+        mc:Ignorable="d"
+        Background="LightBlue"
+        
+    
+        Title="MainWindow" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.399,0.461" Margin="0,0,0,-6" HorizontalAlignment="Right" Width="800">
+        <TextBlock HorizontalAlignment="Left" Height="65" Margin="250,40,0,0" TextWrapping="Wrap" Text="MATH GAMES" VerticalAlignment="Top" Width="291" 
+                   TextAlignment="Center" TextBlock.FontSize ="33" FontWeight="Bold" x:Name="TextBlock1"/>
+
+        <Button Content="Grade 1" HorizontalAlignment="Left" Margin="500,184,0,0" VerticalAlignment="Top" Height="42" Width="136" Click="Grade1_Click"  FontWeight="Bold" FontSize="15" Background="Pink" x:Name="TargetButton1"/>
+        <Button Content="Grade 2" HorizontalAlignment="Left" Margin="500,236,0,0" VerticalAlignment="Top" Height="43" Width="136" Click="Grade2_Click"  FontWeight="Bold" FontSize="15" Background="Pink" x:Name="TargetButton2"/>
+        <Button Content="Grade 3" HorizontalAlignment="Left" Margin="500,289,0,0" VerticalAlignment="Top" Height="42" Width="136" Click="Grade3_Click"  FontWeight="Bold" FontSize="15" Background="Pink" x:Name="TargetButton3"/>
+        <Button Content="Grade 4" HorizontalAlignment="Left" Margin="500,342,0,0" VerticalAlignment="Top" Height="42" Width="136" Click="Grade4_Click"  FontWeight="Bold" FontSize="15" Background="Pink" x:Name="TargetButton4"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="36" Margin="500,148,0,0" TextWrapping="Wrap" Text="Select Grade" VerticalAlignment="Top" Width="139" 
+    TextAlignment="Center" TextBlock.FontSize ="20" x:Name="TextBlock2"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="65" Margin="250,40,0,0" TextWrapping="Wrap" Text="GRADE 1!" VerticalAlignment="Top" Width="291" 
+           TextAlignment="Center" TextBlock.FontSize ="33" FontWeight="Bold" x:Name="TextBlock3" Visibility="Collapsed"/>
+        <TextBlock HorizontalAlignment="Left" Height="65" Margin="250,40,0,0" TextWrapping="Wrap" Text="GRADE 2!" VerticalAlignment="Top" Width="291" 
+   TextAlignment="Center" TextBlock.FontSize ="33" FontWeight="Bold" x:Name="TextBlock4" Visibility="Collapsed"/>
+        <TextBlock HorizontalAlignment="Left" Height="65" Margin="250,40,0,0" TextWrapping="Wrap" Text="GRADE 3!" VerticalAlignment="Top" Width="291" 
+   TextAlignment="Center" TextBlock.FontSize ="33" FontWeight="Bold" x:Name="TextBlock5" Visibility="Collapsed"/>
+        <TextBlock HorizontalAlignment="Left" Height="65" Margin="250,40,0,0" TextWrapping="Wrap" Text="GRADE 4!" VerticalAlignment="Top" Width="291" 
+   TextAlignment="Center" TextBlock.FontSize ="33" FontWeight="Bold" x:Name="TextBlock6" Visibility="Collapsed"/>
+
+        <Button Content="CHECK" HorizontalAlignment="Left" Margin="539,342,0,0" VerticalAlignment="Top" Height="40" Width="136" Click="Check_Click"  FontWeight="Bold" FontSize="15" Background="Pink" x:Name="ButtonCheck" Visibility="Collapsed"/>
+        <Label x:Name="correctLabel" Content="CORRECT!" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="570,100,0,0" Visibility="Collapsed"/>
+        <Label x:Name="wrongLabel" Content="INCORRECT!" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="570,100,0,0" Visibility="Collapsed"/>
+
+        <Label x:Name="questionCounter1" Content="Question 1/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter2" Content="Question 2/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter3" Content="Question 3/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter4" Content="Question 4/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter5" Content="Question 5/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter6" Content="Question 6/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter7" Content="Question 7/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter8" Content="Question 8/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter9" Content="Question 9/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+        <Label x:Name="questionCounter10" Content="Question 10/10" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Margin="41,103,0,0" Visibility="Collapsed"/>
+
+        <Button x:Name="nextQuestionButton" Content="Question" Width="136" Height="40" Click="NextQuestion_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="539,289,0,0" Background="Pink" FontSize="15" FontWeight="Bold" Visibility="Collapsed"/>
+        <Image Margin="111,154,456,79" Source="/pngtree-math-clipart-png-image_2568772.png" Stretch="Fill" x:Name="MathPic"/>
+
+        <TextBox x:Name="number1" FontSize="20" Margin="400,166,278,230" IsReadOnly="True" Visibility="Collapsed"/>
+        <TextBox x:Name="number2" FontSize="20" Margin="210,166,461,230" IsReadOnly="True" Visibility="Collapsed"/>
+        <TextBlock x:Name="plus" FontSize="60" Margin="344,130,0,0" Text = "+" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Visibility="Collapsed"/>
+        <TextBlock x:Name="minus" FontSize="60" Margin="352,130,0,0" Text = "-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Visibility="Collapsed"/>
+        <TextBlock x:Name="times" FontSize="40" Margin="358,148,0,0" Text = "x" HorizontalAlignment="Left" VerticalAlignment="Top" Height="90" Width="42" Visibility="Collapsed"/>
+        <TextBlock x:Name="divide" FontSize="38" Margin="362,148,0,0" Text = "/" HorizontalAlignment="Left" VerticalAlignment="Top" Width="38" Visibility="Collapsed"/>
+
+        <TextBox x:Name="answerBox" Text="Enter Your Answer" Margin="250,289,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.FontSize ="25" Width="218" TextChanged="answerBox_TextChanged" Visibility="Collapsed" />
+
+
+        <!-- NUM1 -->
+        <Label x:Name="Num1Label" Content="NUM1:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,80,0,0" Visibility="Collapsed"/>
+        <TextBox x:Name="Num1TextBox" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,80,0,0" Width="200" Visibility="Collapsed"/>
+
+        <!-- NUM2 -->
+        <Label x:Name="Num2Label" Content="NUM2:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,110,0,0" Visibility="Collapsed"/>
+        <TextBox x:Name="Num2TextBox" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,110,0,0" Width="200" Visibility="Collapsed"/>
+    </Grid>
+</Window>
+
+    
